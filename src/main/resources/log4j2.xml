@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This log4j2 config file example was taken from Victor Lee's repository -->
+<Configuration status="warn">
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT" >
+            <Filters>
+                <!-- This ThresholdFilter prevents messages at a level lower than debug to be logged to the console -->
+                <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <!-- The pattern defined throughout this file is customizable for each appender -->
+            <!-- For more information see here: https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout -->
+            <PatternLayout pattern="%d R=%r %-5p [%t] [%marker] %X %c.%M:%L - %m%n" />
+        </Console>
+
+        <!-- You will need to rename the fileName and filePattern for your own project -->
+        <RollingFile name="DAILY_LOG" fileName="logs/labzero.log" filePattern="logs/labzero_%d{yyyyMMdd}_%i.log">
+            <PatternLayout>
+                <pattern>%d R=%r %-5p [%t] [%marker] %X %c.%M:%L - %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="512 MB" />
+                <TimeBasedTriggeringPolicy interval="1" />
+                <OnStartupTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="300"/>
+        </RollingFile>
+
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout   pattern="%d R=%r %-5p [%t] [%marker] %X %c.%M:%L - %m%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!-- The Root element defines the lowest level of log message that will be picked up by the appenders -->
+        <Root level="trace" >
+            <AppenderRef ref="STDOUT" />
+            <AppenderRef ref="DAILY_LOG" />
+        </Root>
+
+    </Loggers>
+</Configuration>

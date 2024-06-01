@@ -1,0 +1,12 @@
+{
+    "name": "Devin",
+    "isCool": false,
+    "iqLevel": -3,
+    "dollarValue": -35.01,
+    "hobbies": ["being stupid", "doing nothing"],
+    "eyesight": {
+        "leftEye": 450,
+        "rightEye": 400,
+        "correctiveLensesRequired": true
+    }
+}
