@@ -126,6 +126,9 @@ Here are the instructions of how to interact with this project in your command l
 1. Try the command `mvn exec:java -Dexec.mainClass="ca.yorku.eecs.softwaredesign.JSONDemo" -Dexec.args="whatever.json"` which demonstrates how we can pass command-line arguments in a Java execution using Maven.
 1. Try the command `mvn test` to try to execute the JUnit tests and see how the ParameterizedTests results output, sometimes with additional logging messages shown.
 
+# What is that LICENSE file in the repo?
+Basically, it says what you can and can't do with this project. For more information, visit GitHub's website that helps you to choose a license for your software, https://choosealicense.com/
+
 # I want to learn more on my own time! Do you have any other resources I can browse?
 Personally, no, but my friend [Victor Lee](https://github.com/victorlee0505) (YorkU CS Class of 2020) made a demo app that teaches you about the Spring Boot framework (one of the popular ways of making web applications in Java these days).
 
